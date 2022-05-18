@@ -36,11 +36,11 @@ public class SelectionManager : MonoBehaviour
         if (openDoor)
         {
             GameObject pv = GameObject.Find("doorWing");
-            GameObject.Find("doorWing").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + 1, pv.transform.rotation.eulerAngles.z));
+            GameObject.Find("doorWing").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + 0.5f, pv.transform.rotation.eulerAngles.z));
             limit++;
         }
 
-        if (limit > 100)
+        if (limit > 200)
         {
             openDoor = false;
             GameObject.Find("doorWing").GetComponent<BoxCollider>().isTrigger = true;
