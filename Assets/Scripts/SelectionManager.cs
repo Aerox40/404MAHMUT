@@ -3,8 +3,11 @@ using UnityEngine;
 public class SelectionManager : MonoBehaviour
 {
     public float maxDistance; // 1 works fine.
+
     private bool openDoor;
     private int limit;
+
+    private bool redOpedDoor;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +28,19 @@ public class SelectionManager : MonoBehaviour
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 if (selectionRenderer != null)
                 {
+                    print(selectionRenderer.name);
+
                     if (selectionRenderer.name == "doorWing")
                     {
                         openDoor = true;
+                    }
+
+                    if (selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight")
+                    {
+                        print("HORSE");
+                        redOpedDoor = true;
+                        GameObject.Find("DoorLeft").GetComponent<BoxCollider>().isTrigger = true;
+                        GameObject.Find("DoorRight").GetComponent<BoxCollider>().isTrigger = true;
                     }
                 }
             }
@@ -40,10 +53,26 @@ public class SelectionManager : MonoBehaviour
             limit++;
         }
 
-        if (limit > 200)
+        if (limit > 200 && openDoor)
         {
             openDoor = false;
             GameObject.Find("doorWing").GetComponent<BoxCollider>().isTrigger = true;
+            limit = 0;
+        }
+
+        if (redOpedDoor)
+        {
+            GameObject pv = GameObject.Find("DoorLeft");
+            GameObject.Find("DoorLeft").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + 0.1f, pv.transform.rotation.eulerAngles.z));
+            pv = GameObject.Find("DoorRight");
+            GameObject.Find("DoorRight").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y - 0.16f, pv.transform.rotation.eulerAngles.z));
+            limit++;
+        }
+
+        if (limit > 800 && redOpedDoor)
+        {
+            redOpedDoor = false;
+            limit = 0;
         }
     }
 }
