@@ -2841,7 +2841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff388b54c5169e4897e3a8fc6669551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 1
+  interactionDistance: 2
+  mainDoorSpeed: 1
+  cabinetDoorsSpeed: 1
 --- !u!4 &1131891916
 Transform:
   m_ObjectHideFlags: 0

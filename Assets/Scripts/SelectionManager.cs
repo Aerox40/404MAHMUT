@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    public float maxDistance; // 1 works fine.
+    public float interactionDistance; // 1 works fine.
 
     private bool openDoor;
-    private int limit;
+    private int limit1;
+    private int limit2;
 
     private bool redOpedDoor;
+
+    public float mainDoorSpeed;
+    public float cabinetDoorsSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +26,13 @@ public class SelectionManager : MonoBehaviour
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, maxDistance))
+            if (Physics.Raycast(ray, out hit, interactionDistance))
             {
                 var selection = hit.transform;
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 if (selectionRenderer != null)
                 {
-                    print(selectionRenderer.name);
+                    //print(selectionRenderer.name);
 
                     if (selectionRenderer.name == "doorWing")
                     {
@@ -37,7 +41,7 @@ public class SelectionManager : MonoBehaviour
 
                     if (selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight")
                     {
-                        print("HORSE");
+                        //print("HORSE");
                         redOpedDoor = true;
                         GameObject.Find("DoorLeft").GetComponent<BoxCollider>().isTrigger = true;
                         GameObject.Find("DoorRight").GetComponent<BoxCollider>().isTrigger = true;
@@ -49,30 +53,30 @@ public class SelectionManager : MonoBehaviour
         if (openDoor)
         {
             GameObject pv = GameObject.Find("doorWing");
-            GameObject.Find("doorWing").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + 0.5f, pv.transform.rotation.eulerAngles.z));
-            limit++;
+            GameObject.Find("doorWing").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + (mainDoorSpeed * 0.5f), pv.transform.rotation.eulerAngles.z));
+            limit1++;
         }
 
-        if (limit > 200 && openDoor)
+        if (limit1 > 200/mainDoorSpeed && openDoor)
         {
             openDoor = false;
             GameObject.Find("doorWing").GetComponent<BoxCollider>().isTrigger = true;
-            limit = 0;
+            limit1 = 0;
         }
 
         if (redOpedDoor)
         {
             GameObject pv = GameObject.Find("DoorLeft");
-            GameObject.Find("DoorLeft").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + 0.1f, pv.transform.rotation.eulerAngles.z));
+            GameObject.Find("DoorLeft").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + (cabinetDoorsSpeed * 0.1f), pv.transform.rotation.eulerAngles.z));
             pv = GameObject.Find("DoorRight");
-            GameObject.Find("DoorRight").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y - 0.16f, pv.transform.rotation.eulerAngles.z));
-            limit++;
+            GameObject.Find("DoorRight").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y - (cabinetDoorsSpeed * 0.16f), pv.transform.rotation.eulerAngles.z));
+            limit2++;
         }
 
-        if (limit > 800 && redOpedDoor)
+        if (limit2 > 800/cabinetDoorsSpeed && redOpedDoor)
         {
             redOpedDoor = false;
-            limit = 0;
+            limit2 = 0;
         }
     }
 }
