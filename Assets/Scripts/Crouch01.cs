@@ -7,6 +7,7 @@ public class Crouch01 : MonoBehaviour
     public CharacterController PlayerHeight;
     public float normalHeight, crouchHeight;
     private float distance;
+    private bool isCrouched;
 
     void Start()
     {
@@ -15,14 +16,24 @@ public class Crouch01 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.LeftControl))
         {
-            PlayerHeight.height = crouchHeight;
+            if (!isCrouched)
+            {
+                PlayerHeight.height = crouchHeight;
+                isCrouched = true;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl) && PlayerHeight.height < normalHeight)
+        else if (isCrouched)
         {
+            transform.position = new Vector3(transform.position.x, 5.2f, transform.position.z);
             PlayerHeight.height = normalHeight;
-            transform.position = new Vector3(transform.position.x, transform.position.y + (distance / 2), transform.position.z);
+            isCrouched = false;
         }
+
     }
 }
