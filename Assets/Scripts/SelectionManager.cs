@@ -9,7 +9,7 @@ public class SelectionManager : MonoBehaviour
     private int limit1;
     private int limit2;
 
-    private int redOpedDoor;
+    private int redOpenDoor;
 
     public float mainDoorSpeed;
     public float cabinetDoorsSpeed;
@@ -39,12 +39,12 @@ public class SelectionManager : MonoBehaviour
                     {
                         openDoor = 2;
                     }
-                    
 
-                    if (selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight" && redOpedDoor == 0)
+
+                    if (selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight" && redOpenDoor == 0)
                     {
                         //print("HORSE");
-                        redOpedDoor = 1;
+                        redOpenDoor = 1;
                         GameObject.Find("DoorLeft").GetComponent<BoxCollider>().isTrigger = true;
                         GameObject.Find("DoorRight").GetComponent<BoxCollider>().isTrigger = true;
                     }
@@ -53,6 +53,11 @@ public class SelectionManager : MonoBehaviour
                     {
                         selection.gameObject.SetActive(false);
                         openDoor = 1;
+                    }
+
+                    if (selectionRenderer.name == "FirstAidKit_Biohazard" && redOpenDoor > 0)
+                    {
+                        selection.gameObject.SetActive(false);
                     }
                 }
             }
@@ -65,14 +70,14 @@ public class SelectionManager : MonoBehaviour
             limit1++;
         }
 
-        if (limit1 > 200/mainDoorSpeed && openDoor == 2)
+        if (limit1 > 200 / mainDoorSpeed && openDoor == 2)
         {
             openDoor = 3;
             GameObject.Find("doorWing").GetComponent<BoxCollider>().isTrigger = true;
             limit1 = 0;
         }
 
-        if (redOpedDoor == 1)
+        if (redOpenDoor == 1)
         {
             GameObject pv = GameObject.Find("DoorLeft");
             GameObject.Find("DoorLeft").transform.rotation = Quaternion.Euler(new Vector3(pv.transform.rotation.eulerAngles.x, pv.transform.rotation.eulerAngles.y + (cabinetDoorsSpeed * 0.1f), pv.transform.rotation.eulerAngles.z));
@@ -81,9 +86,9 @@ public class SelectionManager : MonoBehaviour
             limit2++;
         }
 
-        if (limit2 > 800/cabinetDoorsSpeed && redOpedDoor == 1)
+        if (limit2 > 800 / cabinetDoorsSpeed && redOpenDoor == 1)
         {
-            redOpedDoor = 2;
+            redOpenDoor = 2;
             limit2 = 0;
         }
     }

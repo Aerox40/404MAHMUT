@@ -2729,8 +2729,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -3189,6 +3189,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4079657690167600, guid: e85eb34fbf3cc5c45a49009ce670c14d, type: 3}
   m_PrefabInstance: {fileID: 1783376940}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &967699704 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395077, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+  m_PrefabInstance: {fileID: 7288094137546172433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &967699706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+  m_PrefabInstance: {fileID: 7288094137546172433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &967699707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967699704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49983bcac5345114aaafaaed662b75ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.7
+  duration: 10
+  cam: {fileID: 967699706}
+  slowDownAmount: 1
+  shouldShake: 0
 --- !u!1 &1004917033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,6 +4086,7 @@ GameObject:
   - component: {fileID: 1285641340}
   - component: {fileID: 1287122912}
   - component: {fileID: 1287122913}
+  - component: {fileID: 1287122914}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -4604,8 +4632,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.98999995, y: 2, z: 0.48999998}
-  m_Center: {x: -0.00000011920929, y: 0.00000047683716, z: 0}
+  m_Size: {x: 0.98999995, y: 0.4809137, z: 0.48999998}
+  m_Center: {x: -0.00000011920929, y: 0.7595438, z: 0}
+--- !u!65 &1287122914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284635386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.98999995, y: 0.9293846, z: 0.48999998}
+  m_Center: {x: -0.00000011920929, y: -0.5353071, z: 0}
 --- !u!23 &1287124504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4853,16 +4894,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493429623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49983bcac5345114aaafaaed662b75ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 2
+  power: 0.2
   duration: 3
   cam: {fileID: 1493429628}
-  slowDownAmount: 3
-  shouldShake: 0
+  slowDownAmount: 1
+  shouldShake: 1
 --- !u!1 &1500874147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1044071335751422, guid: 43374f02c65eea84ca9c2bf34a6af4b1, type: 3}
@@ -5164,6 +5205,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1504879477180547959, guid: 2e664cff58592ef46ae18f05c38f52e5, type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6896597939343215794, guid: 2e664cff58592ef46ae18f05c38f52e5, type: 3}
       propertyPath: m_Name
       value: FirstAidKit_Biohazard
@@ -5194,7 +5239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7633313922651045537, guid: 2e664cff58592ef46ae18f05c38f52e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.1628
+      value: 16.912
       objectReference: {fileID: 0}
     - target: {fileID: 7633313922651045537, guid: 2e664cff58592ef46ae18f05c38f52e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8153,6 +8198,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 8338988565591873055}
+    - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.5662299
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
 --- !u!4 &8338988565591873055 stripped
