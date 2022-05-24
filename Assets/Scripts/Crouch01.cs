@@ -20,7 +20,7 @@ public class Crouch01 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftControl) && SelectionManager.openDoor == 0)
         {
             if (!isCrouched)
             {
@@ -28,7 +28,7 @@ public class Crouch01 : MonoBehaviour
                 isCrouched = true;
             }
         }
-        else if (isCrouched)
+        else if (isCrouched && SelectionManager.openDoor == 0)
         {
             transform.position = new Vector3(transform.position.x, 5.2f, transform.position.z);
             PlayerHeight.height = normalHeight;
