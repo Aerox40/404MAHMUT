@@ -9138,6 +9138,7 @@ MonoBehaviour:
   panel3: {fileID: 660307970}
   panel4: {fileID: 57907222}
   panel5: {fileID: 1501875147}
+  playerCapsule: {fileID: 1215937620}
 --- !u!1001 &2059474176
 PrefabInstance:
   m_ObjectHideFlags: 0
