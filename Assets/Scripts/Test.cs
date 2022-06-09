@@ -22,6 +22,7 @@ public class Test : MonoBehaviour
 
     void shake()
     {
+        print("heyy");
         impulse.GenerateImpulse(10f);
     }
 }
