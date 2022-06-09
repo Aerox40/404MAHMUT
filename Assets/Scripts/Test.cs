@@ -10,8 +10,6 @@ public class Test : MonoBehaviour
     void Start()
     {
         impulse = transform.GetComponent<CinemachineImpulseSource>();
-
-        Invoke("shake", 3f);
     }
 
     // Update is called once per frame
@@ -22,7 +20,11 @@ public class Test : MonoBehaviour
 
     void shake()
     {
-        print("heyy");
-        impulse.GenerateImpulse(10f);
+        impulse.GenerateImpulse(5f);
+    }
+
+    public void invokedShake()
+    {
+        Invoke("shake", 5f);     
     }
 }

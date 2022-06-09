@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    public GameObject panel1, panel2, panel3, panel4, panel5;
+    public GameObject panel1, panel2, panel3, panel4, panel5, lifetriangle;
 
     public GameObject playerCapsule;
 
@@ -75,5 +75,47 @@ public class PauseMenu : MonoBehaviour
         playerCapsule.GetComponent<CharacterController>().gameObject.SetActive(true);
         playerCapsule.GetComponent<Crouch01>().gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void invokedPanel2Open()
+    {
+        Invoke("panel2Open", 10f);
+    }
+
+    private void panel2Open()
+    {
+        panel2.SetActive(true);
+        StopMovement();
+    }
+
+    public void panel2Close() 
+    {
+        panel2.SetActive(false);
+        StartMovement();
+        lifetriangle.SetActive(true);
+    }
+
+    public void invokedPanel3Open()
+    {
+        Invoke("lockcrouching", 1f);
+        Invoke("panel3Open", 10f);     
+    }
+
+    private void panel3Open()
+    {
+        panel3.SetActive(true);
+        StopMovement();
+    }
+
+    public void panel3Close()
+    {
+        panel3.SetActive(false);
+        StartMovement();
+    }
+
+    private void lockcrouching()
+    {
+        playerCapsule.GetComponent<CharacterController>().gameObject.SetActive(false);
+        playerCapsule.GetComponent<Crouch01>().gameObject.SetActive(false);
     }
 }
