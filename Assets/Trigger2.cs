@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+public class Trigger2 : MonoBehaviour
 {
     public GameObject canvas;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +16,14 @@ public class Trigger : MonoBehaviour
     {
         
     }
-    private void OnTriggerStay(Collider lifeTri)
+
+    private void OnTriggerStay(Collider finishTri)
     {
         //print(lifeTri.name);
-        if (lifeTri.name == "PlayerCapsule" && Input.GetKey(KeyCode.LeftControl) && !Test.lever1)
+        if (finishTri.name == "PlayerCapsule")
         {
             print("hello");
-            canvas.GetComponent<PauseMenu>().invokedPanel3Open();
+            canvas.GetComponent<PauseMenu>().panel6Open();
         }
     }
 }

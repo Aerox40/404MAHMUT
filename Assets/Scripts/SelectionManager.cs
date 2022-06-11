@@ -14,6 +14,10 @@ public class SelectionManager : MonoBehaviour
     public float mainDoorSpeed;
     public float cabinetDoorsSpeed;
 
+    public static bool lever2;
+
+    public GameObject canvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,7 @@ public class SelectionManager : MonoBehaviour
                     if (selectionRenderer.name == "doorWing" && openDoor == 1)
                     {
                         openDoor = 2;
+                        canvas.GetComponent<PauseMenu>().panel5Open();
                     }
 
 
@@ -49,13 +54,13 @@ public class SelectionManager : MonoBehaviour
                         GameObject.Find("DoorRight").GetComponent<BoxCollider>().isTrigger = true;
                     }
 
-                    if (selectionRenderer.name == "sm_key_01" && openDoor == 0)
+                    if (selectionRenderer.name == "sm_key_01" && openDoor == 0 && lever2)
                     {
                         selection.gameObject.SetActive(false);
                         openDoor = 1;
                     }
 
-                    if (selectionRenderer.name == "FirstAidKit_Biohazard" && redOpenDoor > 0)
+                    if (selectionRenderer.name == "FirstAidKit_Biohazard" && redOpenDoor > 0 && lever2)
                     {
                         selection.gameObject.SetActive(false);
                     }

@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    public GameObject panel1, panel2, panel3, panel4, panel5, lifetriangle;
+    public GameObject panel1, panel2, panel3, panel4, panel5, panel6, lifetriangle, finishtriangle;
 
     public GameObject playerCapsule;
 
@@ -117,5 +117,40 @@ public class PauseMenu : MonoBehaviour
     {
         playerCapsule.GetComponent<CharacterController>().gameObject.SetActive(false);
         playerCapsule.GetComponent<Crouch01>().gameObject.SetActive(false);
+    }
+
+    void panel4Open()
+    {
+        panel4.SetActive(true);
+        StopMovement();
+    }
+
+    public void panel4Close()
+    {
+        panel4.SetActive(false);
+        StartMovement();
+        SelectionManager.lever2 = true;
+    }
+    public void invokedPanel4Open()
+    {
+        Invoke("panel4Open", 8.5f);
+    }
+
+    public void panel5Open()
+    {
+        panel5.SetActive(true);
+        StopMovement();
+    }
+
+    public void panel5Close()
+    {
+        panel5.SetActive(false);
+        StartMovement();
+    }
+
+    public void panel6Open()
+    {
+        panel6.SetActive(true);
+        StopMovement();
     }
 }

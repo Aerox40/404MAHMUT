@@ -5,6 +5,9 @@ using Cinemachine;
 
 public class Test : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public static bool lever1;
+
     CinemachineImpulseSource impulse;
     // Start is called before the first frame update
     void Start()
@@ -20,11 +23,36 @@ public class Test : MonoBehaviour
 
     void shake()
     {
-        impulse.GenerateImpulse(5f);
+        print("hi");
+        impulse.GenerateImpulse(2f);
+        if (!lever1)
+        {
+            Invoke("shake", 5f);
+        }
+        else 
+        {
+          Invoke("stopAudio",5f);
+        }
     }
 
     public void invokedShake()
     {
-        Invoke("shake", 5f);     
+        Invoke("shake", 5f);
+        Invoke("playAudio", 5f);
+    }
+
+    public void StopEarthquake()
+    {
+        lever1 = true;
+    }
+
+    void playAudio()
+    {
+        audioSource.Play();
+    }
+
+    void stopAudio()
+    {
+        audioSource.Stop();
     }
 }
