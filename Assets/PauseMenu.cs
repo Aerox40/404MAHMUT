@@ -36,7 +36,6 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        //Time.timeScale = 1f;
         StartMovement();
         GameIsPaused = false;
     }
@@ -44,22 +43,18 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenuUI.SetActive(true);
-        //Time.timeScale = 0f;
         StopMovement();
         GameIsPaused = true;
     }
 
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.None;
-        //Time.timeScale = 0f;
         StopMovement();
     }
 
     public void Panel1Close()
     {
         panel1.SetActive(false);
-        //Time.timeScale = 1f;
         StartMovement();
     }
 

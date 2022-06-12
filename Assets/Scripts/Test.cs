@@ -9,21 +9,17 @@ public class Test : MonoBehaviour
     public static bool lever1;
 
     CinemachineImpulseSource impulse;
-    // Start is called before the first frame update
     void Start()
     {
         impulse = transform.GetComponent<CinemachineImpulseSource>();
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        
+    {      
     }
 
     void shake()
     {
-        print("hi");
         impulse.GenerateImpulse(2f);
         if (!lever1)
         {

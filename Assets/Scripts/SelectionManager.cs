@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    public float interactionDistance; // 1 works fine.
+    public float interactionDistance;
 
     public static int openDoor;
     private bool gotKey;
@@ -18,13 +18,11 @@ public class SelectionManager : MonoBehaviour
 
     public GameObject canvas;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -48,7 +46,6 @@ public class SelectionManager : MonoBehaviour
 
                     if (selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight" && redOpenDoor == 0)
                     {
-                        //print("HORSE");
                         redOpenDoor = 1;
                         GameObject.Find("DoorLeft").GetComponent<BoxCollider>().isTrigger = true;
                         GameObject.Find("DoorRight").GetComponent<BoxCollider>().isTrigger = true;
