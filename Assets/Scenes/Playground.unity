@@ -11196,7 +11196,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "E\u011Fer art\u0131k depremin bitti\u011Fine eminseniz kalk\u0131p hemen
-    afet \xE7antan\u0131z\u0131 ve evinizin anahatar\u0131n\u0131 al\u0131p \xE7abucak
+    afet \xE7antan\u0131z\u0131 ve evinizin anahtar\u0131n\u0131 al\u0131p \xE7abucak
     evden ayr\u0131l\u0131n."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

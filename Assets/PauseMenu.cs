@@ -100,6 +100,7 @@ public class PauseMenu : MonoBehaviour
     {
         panel3.SetActive(true);
         StopMovement();
+        Invoke("lockcrouching", 1f);
     }
 
     public void panel3Close()

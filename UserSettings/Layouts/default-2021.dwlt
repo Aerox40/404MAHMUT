@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 63
+  controlID: 75
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 64
+  controlID: 135
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 65
+  controlID: 136
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,22 +346,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Environment/Art/Skybox
+    - Assets/Images
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Environment/Art/Skybox
+  - Assets/Images
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\emrek\Documents\Earthquake Simulation Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 239}
-    m_SelectedIDs: da7b0000
-    m_LastClickedID: 31706
-    m_ExpandedIDs: 00000000b2760000b4760000b6760000b8760000ba760000bc760000be760000c0760000c2760000c4760000c6760000c8760000ca760000cc760000ce760000d2760000e0760000967b000000ca9a3b
+    scrollPos: {x: 0, y: 171}
+    m_SelectedIDs: e2800000
+    m_LastClickedID: 32994
+    m_ExpandedIDs: 0000000030770000327700003477000036770000387700003a7700003c7700003e77000040770000427700004477000046770000487700004a7700004c7700004e77000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b2760000b4760000b6760000b8760000ba760000bc760000be760000c0760000c2760000c4760000c6760000c8760000ca760000cc760000ce760000d0760000d2760000
+    m_ExpandedIDs: 0000000030770000327700003477000036770000387700003a7700003c7700003e77000040770000427700004477000046770000487700004a7700004c7700004e770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -516,10 +516,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 865}
-      m_SelectedIDs: dc7b0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 524cffff18fbffffec6b00005e6c00008e6c0000de6c0000026d0000926d0000c46d0000646e0000b66e0000
+      scrollPos: {x: 0, y: 609}
+      m_SelectedIDs: b46e0000
+      m_LastClickedID: 28340
+      m_ExpandedIDs: 62ceffff8cf8ffff90f8ffff18fbfffff26b0000626c0000086d00001a6e0000846e0000906e0000986e0000c86e0000026f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -535,7 +535,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 11}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -768,9 +768,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.363052, y: 8.317347, z: 17.268593}
+    m_Target: {x: 1.0247664, y: 7.043828, z: 13.959546}
     speed: 2
-    m_Value: {x: -4.363052, y: 8.317347, z: 17.268593}
+    m_Value: {x: 1.0247664, y: 7.043828, z: 13.959546}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -817,13 +817,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.002664765, y: -0.9977303, z: 0.04222722, w: -0.056344688}
+    m_Target: {x: 0.015120349, y: 0.77106994, z: -0.017108379, w: 0.6368553}
     speed: 2
-    m_Value: {x: -0.0025375253, y: -0.99768, z: 0.042225935, w: -0.05333976}
+    m_Value: {x: 0.016069612, y: 0.7707911, z: -0.018259602, w: 0.63662356}
   m_Size:
-    m_Target: 0.56712365
+    m_Target: 0.35324222
     speed: 2
-    m_Value: 0.56712365
+    m_Value: 0.35324222
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -841,7 +841,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.03044719, y: -0.71553105, z: 0.031486776, w: -0.6973301}
+  m_LastSceneViewRotation: {x: -0.072576895, y: 0.89613926, z: -0.16082713, w: -0.40798807}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
