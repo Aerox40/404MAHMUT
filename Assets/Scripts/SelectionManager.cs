@@ -44,7 +44,7 @@ public class SelectionManager : MonoBehaviour
                     }
 
 
-                    if (selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight" && redOpenDoor == 0)
+                    if ((selectionRenderer.name == "DoorLeft" || selectionRenderer.name == "DoorRight") && redOpenDoor == 0)
                     {
                         redOpenDoor = 1;
                         GameObject.Find("DoorLeft").GetComponent<BoxCollider>().isTrigger = true;
