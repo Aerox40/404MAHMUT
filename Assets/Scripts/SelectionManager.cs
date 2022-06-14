@@ -16,6 +16,8 @@ public class SelectionManager : MonoBehaviour
 
     public static bool lever2;
 
+    public bool lever3;
+
     public GameObject canvas;
 
     void Start()
@@ -37,7 +39,7 @@ public class SelectionManager : MonoBehaviour
                 {
                     print(selectionRenderer.name);
 
-                    if (selectionRenderer.name == "doorWing" && openDoor == 1)
+                    if (selectionRenderer.name == "doorWing" && openDoor == 1 && lever3)
                     {
                         openDoor = 2;
                         canvas.GetComponent<PauseMenu>().panel5Open();
@@ -60,7 +62,10 @@ public class SelectionManager : MonoBehaviour
                     if (selectionRenderer.name == "FirstAidKit_Biohazard" && redOpenDoor > 0 && lever2)
                     {
                         selection.gameObject.SetActive(false);
+                        lever3 = true;
                     }
+
+                    
                 }
             }
         }

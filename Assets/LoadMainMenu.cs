@@ -20,5 +20,9 @@ public class LoadMainMenu : MonoBehaviour
      public void LoadMainMenuScreen() 
     {
         SceneManager.LoadScene("MainMenu");
+        PauseMenu.GameIsPaused = false;
+        Test.lever1 = false;
+        SelectionManager.openDoor = 0;
+        SelectionManager.lever2 = false;
     }
 }
